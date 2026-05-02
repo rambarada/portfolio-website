@@ -10,11 +10,12 @@ export function Contact() {
               Contact
             </p>
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Have a product workflow that needs a serious build?
+              Need a web product built with ownership from idea to launch?
             </h2>
             <p className="mt-4 max-w-2xl leading-7 text-slate-300">
-              Reach out for Angular applications, Node.js APIs, Firebase/GCP
-              cloud workflows, AWS-backed systems, and production-ready web platforms.
+              I help turn complex ideas into polished, scalable web experiences,
+              from product thinking and architecture to implementation, integration,
+              deployment, and long-term maintainability.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
