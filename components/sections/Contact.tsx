@@ -1,6 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import { contactLinks } from "@/data/portfolio";
 
+const email = "owmrambarada@gmail.com";
+const mailHref =
+  "mailto:owmrambarada@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Ram%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.";
+
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  };
+
   return (
     <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
       <div className="rounded-lg border border-accent/20 bg-gradient-to-br from-accent/[0.12] via-panel/90 to-skysoft/[0.08] p-6 shadow-[0_30px_120px_rgba(0,0,0,.28)] backdrop-blur sm:p-8">
@@ -19,11 +34,18 @@ export function Contact() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="mailto:owmrambarada@gmail.com"
+                href={mailHref}
                 className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent"
               >
                 Send Email
               </a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+              >
+                {copied ? "Email Copied" : "Copy Email"}
+              </button>
               <a
                 href="/documents/ram-barada-cv.pdf"
                 target="_blank"
