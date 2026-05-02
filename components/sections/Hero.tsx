@@ -66,11 +66,6 @@ export function Hero() {
                   <p className="mt-1 text-sm text-slate-400">Full-stack and cloud web applications</p>
                 </div>
               </div>
-              <div className="flex gap-1.5 self-start">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-skysoft/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
-              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
