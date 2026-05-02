@@ -39,13 +39,6 @@ export function Contact() {
               >
                 Send Email
               </a>
-              <button
-                type="button"
-                onClick={copyEmail}
-                className="rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
-              >
-                {copied ? "Email Copied" : "Copy Email"}
-              </button>
               <a
                 href="/documents/ram-barada-cv.pdf"
                 target="_blank"
@@ -57,16 +50,56 @@ export function Contact() {
             </div>
           </div>
           <div className="grid gap-3">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="flex flex-col rounded-md border border-white/10 bg-ink/35 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <span className="text-sm text-slate-400">{link.label}</span>
-                <span className="text-sm font-semibold text-white">{link.value}</span>
-              </a>
-            ))}
+            {contactLinks.map((link) => {
+              if (link.label === "Email") {
+                return (
+                  <div
+                    key={link.label}
+                    className="flex flex-col gap-3 rounded-md border border-white/10 bg-ink/35 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 sm:flex-row sm:items-center sm:justify-between"
+                  >
+                    <a href={mailHref} className="flex flex-col gap-1">
+                      <span className="text-sm text-slate-400">{link.label}</span>
+                      <span className="text-sm font-semibold text-white">{link.value}</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={copyEmail}
+                      aria-label="Copy email address"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-300 transition hover:border-accent hover:text-accent"
+                    >
+                      {copied ? (
+                        <span className="text-xs font-semibold">OK</span>
+                      ) : (
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect x="9" y="9" width="13" height="13" rx="2" />
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="flex flex-col rounded-md border border-white/10 bg-ink/35 px-4 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <span className="text-sm text-slate-400">{link.label}</span>
+                  <span className="text-sm font-semibold text-white">{link.value}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
