@@ -207,7 +207,7 @@ export const certifications: Certification[] = [
     name: "Spring Certified Professional",
     issuer: "VMware",
     detail: "2024",
-    badge: "SP",
+    badge: "Spring Boot",
   },
   {
     name: "Advanced Full Stack Development with AI",
