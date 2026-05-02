@@ -101,7 +101,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Databases & Tools",
     accent: "from-white/10 to-accent/10",
-    skills: ["PostgreSQL", "Prisma ORM", "SQL Server", "NoSQL", "Algolia", "Swagger", "Postman"],
+    skills: ["Firestore", "PostgreSQL", "Prisma ORM", "SQL Server", "NoSQL", "Algolia", "Swagger", "Postman"],
   },
 ];
 
