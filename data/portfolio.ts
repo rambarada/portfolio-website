@@ -176,6 +176,17 @@ export const projects: Project[] = [
     stack: ["Node.js", "Nodemailer", "IMAP", "Gmail API"],
   },
   {
+    name: "AI-Assisted Invoice Processing",
+    kicker: "OCR, automation, and validation workflows",
+    problem:
+      "Property-management teams need to process invoices faster while reducing manual validation mistakes.",
+    solution:
+      "Created an invoice-processing feature that uses AI OCR to scan invoices, extract relevant fields, and support automated processing workflows. Integrated a Gemini-powered automation layer to compare OCR-extracted receiver data against validated system records.",
+    impact:
+      "Helps automate invoice review by measuring confidence between OCR data and stored receiver information, with logic to reject or flag invoices when the receiver is not validated in the system.",
+    stack: ["Angular", "Firebase", "Cloud Functions", "Gemini", "OCR", "TypeScript"],
+  },
+  {
     name: "HR Onboarding Workflow Module",
     kicker: "Forward MENA team project",
     problem: "HR teams needed configurable onboarding and offboarding flows with repeatable task templates.",

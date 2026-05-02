@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { projects } from "@/data/portfolio";
-import { ArrowLink, Card, Tag } from "@/components/ui";
+import { Card, Tag } from "@/components/ui";
 import { Section } from "@/components/Section";
 
 export function ProjectsCarousel() {
@@ -14,7 +14,7 @@ export function ProjectsCarousel() {
   };
 
   return (
-    <Section id="projects" eyebrow="Projects" title="Featured case-study previews.">
+    <Section id="projects" eyebrow="Product work" title="Selected product work and technical case studies.">
       <div className="grid gap-5 lg:grid-cols-[0.7fr_0.3fr]">
         <Card className="overflow-hidden p-0">
           <div className="relative overflow-hidden border-b border-line bg-gradient-to-br from-accent/18 via-skysoft/10 to-white/[0.03] p-6 sm:p-8">
@@ -47,7 +47,6 @@ export function ProjectsCarousel() {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <ArrowLink href="#contact">View details</ArrowLink>
               <button
                 type="button"
                 onClick={() => move(-1)}
