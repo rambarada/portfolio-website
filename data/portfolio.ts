@@ -2,6 +2,7 @@ export type LinkItem = {
   label: string;
   value?: string;
   href: string;
+  newTab?: boolean;
 };
 
 export type Highlight = {
@@ -57,7 +58,7 @@ export const contactLinks: LinkItem[] = [
 export const heroActions: LinkItem[] = [
   { label: "GitHub profile", href: "https://github.com/rambarada" },
   { label: "LinkedIn profile", href: "https://linkedin.com/in/ram-barada" },
-  { label: "CV by email", href: "mailto:owmrambarada@gmail.com?subject=CV%20request" },
+  { label: "Preview CV", href: "/documents/ram-barada-cv.pdf", newTab: true },
 ];
 
 export const highlights: Highlight[] = [

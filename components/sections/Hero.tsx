@@ -35,6 +35,8 @@ export function Hero() {
             <a
               key={action.label}
               href={action.href}
+              target={action.newTab ? "_blank" : undefined}
+              rel={action.newTab ? "noreferrer" : undefined}
               className="inline-flex items-center gap-2 transition hover:text-accent"
             >
               {action.label}

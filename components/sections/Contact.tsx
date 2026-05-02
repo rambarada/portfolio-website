@@ -25,10 +25,12 @@ export function Contact() {
                 Send Email
               </a>
               <a
-                href="mailto:owmrambarada@gmail.com?subject=CV%20request"
+                href="/documents/ram-barada-cv.pdf"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
               >
-                Request CV
+                Preview CV
               </a>
             </div>
           </div>
