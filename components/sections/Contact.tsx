@@ -17,7 +17,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+    <section id="contact" className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-16 sm:py-20">
       <div className="rounded-lg border border-accent/20 bg-gradient-to-br from-accent/[0.12] via-panel/90 to-skysoft/[0.08] p-6 shadow-[0_30px_120px_rgba(0,0,0,.28)] backdrop-blur sm:p-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>

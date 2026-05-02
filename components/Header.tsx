@@ -32,30 +32,33 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" className="text-base font-semibold text-white transition hover:text-accent">
-          Ram Barada
-        </a>
-        <div className="hidden items-center gap-2 md:flex">
-          {navItems.map((item) => {
-            const id = item.toLowerCase();
-            const isActive = active === id;
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#hero" className="text-base font-semibold text-white transition hover:text-accent">
+            Ram Barada
+          </a>
+          <div className="hidden items-center gap-2 md:flex">
+            {navItems.map((item) => {
+              const id = item.toLowerCase();
+              const isActive = active === id;
 
-            return (
-              <a
-                key={item}
-                href={`#${id}`}
-                className={`rounded-full px-3 py-2 text-sm transition ${
-                  isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
-                }`}
-              >
-                {item}
-              </a>
-            );
-          })}
-        </div>
-      </nav>
-    </header>
+              return (
+                <a
+                  key={item}
+                  href={`#${id}`}
+                  className={`rounded-full px-3 py-2 text-sm transition ${
+                    isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
+                  }`}
+                >
+                  {item}
+                </a>
+              );
+            })}
+          </div>
+        </nav>
+      </header>
+      <div aria-hidden="true" className="h-[65px]" />
+    </>
   );
 }
