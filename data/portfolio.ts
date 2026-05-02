@@ -55,9 +55,9 @@ export const contactLinks: LinkItem[] = [
 ];
 
 export const heroActions: LinkItem[] = [
-  { label: "GitHub", href: "https://github.com/rambarada" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/ram-barada" },
-  { label: "Request CV", href: "mailto:owmrambarada@gmail.com?subject=CV%20request" },
+  { label: "GitHub profile", href: "https://github.com/rambarada" },
+  { label: "LinkedIn profile", href: "https://linkedin.com/in/ram-barada" },
+  { label: "CV by email", href: "mailto:owmrambarada@gmail.com?subject=CV%20request" },
 ];
 
 export const highlights: Highlight[] = [

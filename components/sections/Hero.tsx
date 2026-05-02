@@ -6,9 +6,9 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto grid min-h-[680px] max-w-6xl items-center gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1.02fr_0.98fr]"
+      className="mx-auto grid min-h-[680px] max-w-7xl items-center gap-12 px-6 py-16 sm:py-20 xl:grid-cols-[minmax(0,0.95fr)_minmax(420px,0.82fr)] xl:gap-16"
     >
-      <div className="animate-rise">
+      <div className="animate-rise max-w-3xl">
         <div className="mb-5 inline-flex max-w-full items-center gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
           <span className="h-2 w-2 shrink-0 rounded-full bg-accent shadow-[0_0_18px_rgba(79,209,197,.85)]" />
           <span>Currently building cloud workflows for property-management teams</span>
@@ -30,23 +30,21 @@ export function Hero() {
           </ButtonLink>
           <ButtonLink href="#contact">Contact Me</ButtonLink>
         </div>
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-slate-300">
           {heroActions.map((action) => (
-            <ButtonLink key={action.label} href={action.href} variant="ghost">
+            <a
+              key={action.label}
+              href={action.href}
+              className="inline-flex items-center gap-2 transition hover:text-accent"
+            >
               {action.label}
-            </ButtonLink>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
           ))}
         </div>
       </div>
 
-      <div className="animate-rise relative mx-auto w-full max-w-[520px] delay-150 lg:mr-0">
-        <div className="pointer-events-none absolute -right-3 top-8 hidden rounded-full border border-accent/30 bg-ink/90 px-4 py-2 text-sm font-medium text-accent shadow-glow xl:block">
-          Firebase + GCP
-        </div>
-        <div className="pointer-events-none absolute -left-3 bottom-16 hidden rounded-full border border-skysoft/30 bg-ink/90 px-4 py-2 text-sm font-medium text-skysoft shadow-glow xl:block">
-          Angular + Node.js
-        </div>
-
+      <div className="animate-rise relative mx-auto w-full max-w-[520px] delay-150 xl:mr-0">
         <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] p-4 shadow-[0_30px_120px_rgba(0,0,0,.35)] backdrop-blur-xl">
           <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
           <div className="grid gap-4 rounded-md border border-line bg-panel/90 p-5">
