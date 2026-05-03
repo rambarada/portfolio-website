@@ -18,6 +18,9 @@ export type Principle = {
 export type SkillGroup = {
   title: string;
   accent: string;
+  description: string;
+  proof: string;
+  icon: "interface" | "integration" | "cloud" | "data";
   skills: string[];
 };
 
@@ -86,23 +89,39 @@ export const principles: Principle[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
+    title: "Frontend Product Interfaces",
     accent: "from-accent/25 to-skysoft/10",
+    icon: "interface",
+    description: "Building responsive, maintainable interfaces for operational web platforms.",
+    proof:
+      "Dashboards, workflow UIs, responsive layouts, document experiences, and maintainable Angular applications.",
     skills: ["Angular", "TypeScript", "React", "Next.js", "Tailwind CSS", "SASS", "Angular Material"],
   },
   {
-    title: "Backend",
+    title: "APIs & Integrations",
     accent: "from-skysoft/20 to-white/5",
+    icon: "integration",
+    description: "Designing backend services and connecting external systems into product workflows.",
+    proof:
+      "REST services, third-party integrations, authentication flows, email systems, and product automation.",
     skills: ["Node.js", "Spring Boot", "REST APIs", "Google APIs", "Nodemailer", "IMAP/Gmail API", "Flask"],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Cloud & Automation",
     accent: "from-accent/20 to-emerald-400/10",
+    icon: "cloud",
+    description: "Shipping serverless workflows, deployments, and cloud-backed application logic.",
+    proof:
+      "Serverless functions, cloud deployments, background workflows, CI/CD pipelines, and scalable application logic.",
     skills: ["Firebase", "GCP", "AWS", "Firebase Cloud Functions", "Docker", "CI/CD", "GitHub"],
   },
   {
-    title: "Databases & Tools",
+    title: "Data, Search & Tooling",
     accent: "from-white/10 to-accent/10",
+    icon: "data",
+    description: "Working with databases, search, and developer tooling to support scalable features.",
+    proof:
+      "Structured data models, search optimization, API documentation, database-backed features, and developer workflows.",
     skills: ["Firestore", "PostgreSQL", "Prisma ORM", "SQL Server", "NoSQL", "Algolia", "Swagger", "Postman"],
   },
 ];

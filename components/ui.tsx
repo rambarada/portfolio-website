@@ -1,13 +1,16 @@
 export function Card({
   children,
   className = "",
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <div
       className={`group rounded-lg border border-line bg-panel/75 shadow-glow backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/70 hover:bg-panel ${className}`}
+      style={style}
     >
       {children}
     </div>
