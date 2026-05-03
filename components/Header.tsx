@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { navItems } from "@/data/portfolio";
+import { headerCta, navItems } from "@/data/portfolio";
 
 export function Header() {
   const [active, setActive] = useState("hero");
@@ -38,23 +38,33 @@ export function Header() {
           <a href="#hero" className="text-base font-semibold text-white transition hover:text-accent">
             Ram Barada
           </a>
-          <div className="hidden items-center gap-2 md:flex">
-            {navItems.map((item) => {
-              const id = item.toLowerCase();
-              const isActive = active === id;
+          <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-2 md:flex">
+              {navItems.map((item) => {
+                const id = item.toLowerCase();
+                const isActive = active === id;
 
-              return (
-                <a
-                  key={item}
-                  href={`#${id}`}
-                  className={`rounded-full px-3 py-2 text-sm transition ${
-                    isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
-                  }`}
-                >
-                  {item}
-                </a>
-              );
-            })}
+                return (
+                  <a
+                    key={item}
+                    href={`#${id}`}
+                    className={`rounded-full px-3 py-2 text-sm transition ${
+                      isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
+                    }`}
+                  >
+                    {item}
+                  </a>
+                );
+              })}
+            </div>
+            <a
+              href={headerCta.href}
+              target={headerCta.newTab ? "_blank" : undefined}
+              rel={headerCta.newTab ? "noreferrer" : undefined}
+              className="rounded-full border border-accent/40 bg-accent px-4 py-2 text-sm font-semibold text-ink shadow-[0_10px_30px_rgba(79,209,197,.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-skysoft hover:shadow-[0_14px_36px_rgba(79,209,197,.24)]"
+            >
+              {headerCta.label}
+            </a>
           </div>
         </nav>
       </header>

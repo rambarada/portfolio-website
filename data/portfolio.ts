@@ -59,8 +59,13 @@ export const contactLinks: LinkItem[] = [
 export const heroActions: LinkItem[] = [
   { label: "GitHub profile", href: "https://github.com/rambarada" },
   { label: "LinkedIn profile", href: "https://linkedin.com/in/ram-barada" },
-  { label: "Preview CV", href: "/documents/ram-barada-cv.pdf", newTab: true },
 ];
+
+export const headerCta: LinkItem = {
+  label: "Preview CV",
+  href: "/documents/ram-barada-cv.pdf",
+  newTab: true,
+};
 
 export const highlights: Highlight[] = [
   { value: "10k -> 200", label: "Algolia monthly requests" },
