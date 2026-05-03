@@ -113,7 +113,7 @@ export const experiences: Experience[] = [
     location: "Germany, Remote",
     period: "Nov 2023 - Present",
     summary:
-      "Leading full-stack development for property-management workflows with Angular, Node.js, Firebase, and Google Cloud.",
+      "Leading full-stack development for property-management workflows, from Angular interfaces to Firebase/GCP cloud functions and production integrations.",
     achievements: [
       "Directed an Angular 15 to 16 migration with stable platform delivery.",
       "Reduced Algolia monthly requests from around 10,000 to around 200.",
@@ -127,7 +127,7 @@ export const experiences: Experience[] = [
     location: "Beirut, Lebanon",
     period: "May 2025 - Sep 2025",
     summary:
-      "Developed HR onboarding and offboarding workflows with Next.js, Node.js, PostgreSQL, Prisma, and Docker.",
+      "Built HR onboarding and offboarding workflows with a modern full-stack setup and team-based delivery practices.",
     achievements: [
       "Led a 2-person team across architecture, task planning, and GitHub reviews.",
       "Built customizable HR task templates and settings.",
@@ -141,7 +141,7 @@ export const experiences: Experience[] = [
     location: "Beirut, Lebanon",
     period: "Apr 2024 - Sep 2024",
     summary:
-      "Built secure web tooling for document classifier management using Angular, Flask, SQL Server, JWT, and Swagger.",
+      "Developed secure admin tooling for document classification with multilingual support, authentication, dashboards, and API documentation.",
     achievements: [
       "Delivered a responsive multilingual admin portal.",
       "Implemented JWT-based authentication for protected data.",
