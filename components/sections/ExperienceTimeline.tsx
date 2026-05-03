@@ -5,6 +5,26 @@ import type { Experience } from "@/data/portfolio";
 import { experiences } from "@/data/portfolio";
 import { Tag } from "@/components/ui";
 
+function BriefcaseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1" />
+      <path d="M4 8h16a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1Z" />
+      <path d="M9 13h6" />
+      <path d="M3 12h18" />
+    </svg>
+  );
+}
+
 function ExperienceCard({
   item,
   index,
@@ -16,28 +36,28 @@ function ExperienceCard({
   expanded: boolean;
   onToggle: () => void;
 }) {
-  const side = index % 2 === 0 ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16";
-  const alignTags = index % 2 === 0 ? "lg:justify-end" : "";
-  const dotPosition =
-    index % 2 === 0
-      ? "-left-[2.85rem] lg:left-auto lg:right-[-2.55rem]"
-      : "-left-[2.85rem] lg:left-[-2.55rem]";
+  const isLeft = index % 2 === 0;
+  const placement = isLeft ? "lg:justify-self-end lg:pr-16" : "lg:col-start-2 lg:pl-16";
+  const dotPlacement = isLeft ? "lg:right-[-0.55rem]" : "lg:left-[-0.55rem]";
 
   return (
-    <article className={`relative lg:grid lg:grid-cols-2 ${index > 0 ? "mt-8 lg:mt-0" : ""}`}>
+    <article className={`relative lg:grid lg:grid-cols-2 ${index > 0 ? "mt-10 lg:mt-12" : ""}`}>
       <div
-        className={`group relative ml-10 rounded-lg border border-line bg-panel/75 p-5 shadow-glow backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/70 hover:bg-panel sm:p-6 lg:ml-0 ${side}`}
+        className={`group relative ml-9 w-full max-w-[420px] rounded-lg border border-white/10 bg-[#070a10]/90 p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,.28)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:p-7 lg:ml-0 ${placement}`}
       >
         <div
-          className={`absolute top-7 h-4 w-4 rounded-full border border-accent bg-ink shadow-[0_0_20px_rgba(79,209,197,.75)] ${dotPosition}`}
+          className={`absolute -left-[2.45rem] top-8 z-10 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)] lg:left-auto ${dotPlacement}`}
         />
 
-        <p className="text-sm font-semibold text-accent">{item.period}</p>
-        <h3 className="mt-3 text-2xl font-semibold text-white">{item.company}</h3>
-        <p className="mt-1 text-sm font-medium text-slate-400">{item.role}</p>
-        <p className="mt-4 text-sm leading-6 text-slate-300">{item.summary}</p>
+        <div className="flex items-center gap-2 text-sm font-semibold text-accent">
+          <BriefcaseIcon />
+          <span>{item.period}</span>
+        </div>
+        <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">{item.company}</h3>
+        <p className="mt-1 text-sm font-medium text-slate-500">{item.role}</p>
+        <p className="mt-5 text-sm leading-6 text-slate-400">{item.summary}</p>
 
-        <div className={`mt-5 flex flex-wrap gap-2 ${alignTags}`}>
+        <div className="mt-5 flex flex-wrap gap-2">
           {item.stack.slice(0, 5).map((tech) => (
             <Tag key={tech}>{tech}</Tag>
           ))}
@@ -53,7 +73,7 @@ function ExperienceCard({
               <p className="mb-3 text-sm font-semibold text-white">Selected achievements</p>
               <ul className="space-y-3 text-sm leading-6 text-slate-300">
                 {item.achievements.map((achievement) => (
-                  <li key={achievement} className="flex gap-3 lg:text-left">
+                  <li key={achievement} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>{achievement}</span>
                   </li>
@@ -84,11 +104,11 @@ export function ExperienceTimeline() {
       id="experience"
       className="relative overflow-hidden border-y border-white/10 bg-ink px-6 py-16 sm:py-20"
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.8)_1px,transparent_1px)] [background-size:64px_64px]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-accent/[0.08] to-transparent" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.8)_1px,transparent_1px)] [background-size:60px_60px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-accent/[0.06] to-transparent" />
 
       <div className="relative mx-auto max-w-6xl scroll-mt-24">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-accent">
             Experience
           </p>
@@ -102,7 +122,7 @@ export function ExperienceTimeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-accent via-line to-transparent lg:left-1/2" />
+          <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-accent/80 via-accent/35 to-transparent lg:left-1/2" />
           <div className="space-y-10 lg:space-y-0">
             {experiences.map((item, index) => (
               <ExperienceCard
