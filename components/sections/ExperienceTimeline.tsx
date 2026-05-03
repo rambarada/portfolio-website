@@ -126,8 +126,10 @@ export function ExperienceTimeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent via-accent/45 to-transparent shadow-[0_0_14px_rgba(79,209,197,.35)] lg:hidden" />
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent via-accent/50 to-transparent shadow-[0_0_18px_rgba(79,209,197,.35)] lg:block" />
+          <div className="absolute left-2 top-0 h-full w-px -translate-x-1/2 bg-accent/80 shadow-[0_0_18px_rgba(79,209,197,.45)] lg:hidden" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-accent/80 shadow-[0_0_20px_rgba(79,209,197,.45)] lg:block">
+            <div className="absolute inset-y-0 left-1/2 w-4 -translate-x-1/2 bg-accent/10 blur-xl" />
+          </div>
           <div className="space-y-10 lg:space-y-0">
             {experiences.map((item, index) => (
               <ExperienceCard
