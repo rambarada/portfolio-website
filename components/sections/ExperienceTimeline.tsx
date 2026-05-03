@@ -74,7 +74,7 @@ function ExperienceCard({
         >
           <div className="overflow-hidden">
             <div className="rounded-md border border-white/10 bg-white/[0.025] p-4">
-              <p className="mb-3 text-sm font-semibold text-white">Selected achievements</p>
+              <p className="mb-3 text-sm font-semibold text-white">Key achievements</p>
               <ul className="space-y-3 text-sm leading-6 text-slate-300">
                 {item.achievements.map((achievement) => (
                   <li key={achievement} className="flex gap-3">
