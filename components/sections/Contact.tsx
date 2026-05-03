@@ -79,7 +79,6 @@ function CopyIcon() {
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
-  const githubHref = contactLinks.find((link) => link.label === "GitHub")?.href ?? "https://github.com/rambarada";
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(email);
@@ -109,14 +108,6 @@ export function Contact() {
                 className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent"
               >
                 Send Email
-              </a>
-              <a
-                href={githubHref}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md border border-white/20 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
-              >
-                View GitHub
               </a>
             </div>
           </div>
