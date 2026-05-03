@@ -45,6 +45,7 @@ export type Certification = {
   issuer: string;
   detail: string;
   badge: string;
+  href: string;
 };
 
 export const navItems = ["About", "Skills", "Experience", "Projects", "Certifications", "Contact"];
@@ -203,18 +204,21 @@ export const certifications: Certification[] = [
     issuer: "Amazon Web Services",
     detail: "DVA-C02",
     badge: "AWS",
+    href: "https://www.credly.com/badges/10a45beb-b487-48a0-a91a-0307eb511783/linked_in_profile",
   },
   {
     name: "Spring Certified Professional",
     issuer: "VMware",
     detail: "2024",
     badge: "Spring Boot",
+    href: "https://www.credly.com/badges/b905e27c-ac24-43a3-a534-2cdb4788be7c",
   },
   {
     name: "Advanced Full Stack Development with AI",
     issuer: "OnRamp",
     detail: "Full-stack + AI tooling",
     badge: "AI",
+    href: "https://drive.google.com/drive/folders/1t7b1bonGAsmFPw7Qpb7D1ziJfKtq88a2",
   },
 ];
 

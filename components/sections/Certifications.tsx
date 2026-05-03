@@ -16,6 +16,15 @@ export function Certifications() {
             <p className="mt-4 inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-slate-300">
               {certification.detail}
             </p>
+            <a
+              href={certification.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-md border border-white/15 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+            >
+              View Certification
+              <span aria-hidden="true">-&gt;</span>
+            </a>
           </Card>
         ))}
       </div>
