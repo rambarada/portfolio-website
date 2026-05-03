@@ -8,27 +8,45 @@ export function Header() {
 
   useEffect(() => {
     const ids = ["hero", ...navItems.map((item) => item.toLowerCase())];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    let frameId = 0;
 
-        if (visible?.target.id) {
-          setActive(visible.target.id);
-        }
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0.08, 0.2, 0.4] },
-    );
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + 140;
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
 
-    ids.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
+      if (isAtBottom) {
+        setActive(navItems[navItems.length - 1].toLowerCase());
+        return;
       }
-    });
 
-    return () => observer.disconnect();
+      const currentId = ids.reduce((current, id) => {
+        const element = document.getElementById(id);
+
+        if (element && element.offsetTop <= scrollPosition) {
+          return id;
+        }
+
+        return current;
+      }, "hero");
+
+      setActive(currentId);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -48,6 +66,7 @@ export function Header() {
                   <a
                     key={item}
                     href={`#${id}`}
+                    onClick={() => setActive(id)}
                     className={`rounded-full px-3 py-2 text-sm transition ${
                       isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
                     }`}
