@@ -37,13 +37,21 @@ function ExperienceCard({
   onToggle: () => void;
 }) {
   const isLeft = index % 2 === 0;
-  const placement = isLeft ? "lg:justify-self-end lg:pr-16" : "lg:col-start-2 lg:pl-16";
+  const placement = isLeft
+    ? "lg:col-start-1 lg:justify-self-end"
+    : "lg:col-start-3 lg:justify-self-start";
 
   return (
-    <article className={`relative lg:grid lg:grid-cols-2 ${index > 0 ? "mt-10 lg:mt-12" : ""}`}>
-      <div className="absolute left-2 top-8 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)] lg:left-1/2" />
+    <article
+      className={`relative grid grid-cols-[1rem_minmax(0,1fr)] gap-x-6 lg:grid-cols-[minmax(0,1fr)_96px_minmax(0,1fr)] lg:gap-x-0 ${
+        index > 0 ? "mt-10 lg:mt-14" : ""
+      }`}
+    >
+      <div className="relative col-start-1 row-start-1 flex justify-center lg:col-start-2">
+        <div className="mt-8 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)]" />
+      </div>
       <div
-        className={`group relative ml-9 w-full max-w-[420px] rounded-lg border border-white/10 bg-[#070a10]/90 p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,.28)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:p-7 lg:ml-0 ${placement}`}
+        className={`group col-start-2 row-start-1 w-full max-w-[420px] rounded-lg border border-white/10 bg-[#070a10]/90 p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,.28)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:p-7 lg:ml-0 ${placement}`}
       >
         <div className="flex items-center gap-2 text-sm font-semibold text-accent">
           <BriefcaseIcon />
@@ -118,8 +126,8 @@ export function ExperienceTimeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-accent/80 via-accent/35 to-transparent lg:hidden" />
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent/90 via-accent/45 to-transparent shadow-[0_0_18px_rgba(79,209,197,.25)] lg:block" />
+          <div className="absolute left-2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent via-accent/45 to-transparent shadow-[0_0_14px_rgba(79,209,197,.35)] lg:hidden" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent via-accent/50 to-transparent shadow-[0_0_18px_rgba(79,209,197,.35)] lg:block" />
           <div className="space-y-10 lg:space-y-0">
             {experiences.map((item, index) => (
               <ExperienceCard
