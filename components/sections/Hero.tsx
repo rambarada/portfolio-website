@@ -25,8 +25,8 @@ export function Hero() {
           I lead product-focused engineering for property-management workflows.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href="#projects" variant="primary">
-            View Projects
+          <ButtonLink href="#product-work" variant="primary">
+            View Product Work
           </ButtonLink>
           <ButtonLink href="#contact">Contact Me</ButtonLink>
         </div>
@@ -51,7 +51,7 @@ export function Hero() {
                 <div>
                   <p className="text-sm font-medium text-accent">Portfolio dashboard</p>
                   <h2 className="mt-1 text-2xl font-semibold text-white">Ram Barada</h2>
-                  <p className="mt-1 text-sm text-slate-400">Full-stack and cloud web applications</p>
+                  <p className="mt-1 text-sm text-slate-400">Lead Full-Stack Developer @ Nahaus.de</p>
                 </div>
               </div>
             </div>
@@ -70,15 +70,15 @@ export function Hero() {
 
             <div className="rounded-md border border-accent/20 bg-accent/[0.06] p-4">
               <div className="mb-3 flex items-center justify-between text-xs text-slate-400">
-                <span>Current focus</span>
+                <span>Current delivery focus</span>
                 <span>Nahaus.de</span>
               </div>
               <div className="h-2 overflow-hidden rounded-full bg-white/10">
                 <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-accent to-skysoft" />
               </div>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                Shipping property workflows, search improvements, file management,
-                and email integrations.
+                Shipping workflow-heavy product features, automation, search improvements,
+                file management, and platform integrations.
               </p>
             </div>
           </div>

@@ -7,7 +7,7 @@ export function Header() {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const ids = ["hero", ...navItems.map((item) => item.toLowerCase())];
+    const ids = ["hero", ...navItems.map((item) => item.id)];
     let frameId = 0;
 
     const updateActiveSection = () => {
@@ -16,7 +16,7 @@ export function Header() {
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
 
       if (isAtBottom) {
-        setActive(navItems[navItems.length - 1].toLowerCase());
+        setActive(navItems[navItems.length - 1].id);
         return;
       }
 
@@ -59,19 +59,18 @@ export function Header() {
           <div className="flex items-center gap-2">
             <div className="hidden items-center gap-2 md:flex">
               {navItems.map((item) => {
-                const id = item.toLowerCase();
-                const isActive = active === id;
+                const isActive = active === item.id;
 
                 return (
                   <a
-                    key={item}
-                    href={`#${id}`}
-                    onClick={() => setActive(id)}
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={() => setActive(item.id)}
                     className={`rounded-full px-3 py-2 text-sm transition ${
                       isActive ? "bg-accent/10 text-accent" : "text-slate-300 hover:text-accent"
                     }`}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 );
               })}

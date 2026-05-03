@@ -5,6 +5,11 @@ export type LinkItem = {
   newTab?: boolean;
 };
 
+export type NavItem = {
+  label: string;
+  id: string;
+};
+
 export type Highlight = {
   value: string;
   label: string;
@@ -37,9 +42,17 @@ export type Experience = {
 export type Project = {
   name: string;
   kicker: string;
-  problem: string;
-  solution: string;
-  impact: string;
+  context: string;
+  improved: string;
+  outcome: string;
+  stack: string[];
+};
+
+export type PersonalProject = {
+  name: string;
+  type: string;
+  date: string;
+  summary: string;
   stack: string[];
 };
 
@@ -51,7 +64,14 @@ export type Certification = {
   href: string;
 };
 
-export const navItems = ["About", "Skills", "Experience", "Projects", "Certifications", "Contact"];
+export const navItems: NavItem[] = [
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Experience", id: "experience" },
+  { label: "Product Work", id: "product-work" },
+  { label: "Certifications", id: "certifications" },
+  { label: "Contact", id: "contact" },
+];
 
 export const contactLinks: LinkItem[] = [
   { label: "Email", value: "owmrambarada@gmail.com", href: "mailto:owmrambarada@gmail.com" },
@@ -66,10 +86,10 @@ export const headerCta: LinkItem = {
 };
 
 export const highlights: Highlight[] = [
-  { value: "10k -> 200", label: "Algolia monthly requests" },
-  { value: "15 -> 16", label: "Angular platform migration" },
+  { value: "10k -> 200", label: "Algolia requests optimized" },
+  { value: "15 -> 16", label: "Angular migration delivered" },
   { value: "Lead", label: "Reviews, mentoring, delivery" },
-  { value: "Cloud", label: "Firebase, GCP, AWS systems" },
+  { value: "Cloud", label: "Firebase, GCP, AWS workflows" },
 ];
 
 export const principles: Principle[] = [
@@ -175,45 +195,104 @@ export const projects: Project[] = [
   {
     name: "Property Document Management System",
     kicker: "Nahaus.de workflow UX",
-    problem: "Property teams needed a faster way to organize and retrieve documents inside the platform.",
-    solution: "Designed a Google Drive-like folder and file experience backed by cloud document workflows.",
-    impact: "Reduced friction in daily document handling for property-management users.",
+    context: "Property teams needed a clearer way to organize, access, and manage documents inside the platform.",
+    improved: "Built a Google Drive-like folder and file experience backed by cloud document workflows.",
+    outcome: "Made daily document handling faster and easier for property-management users.",
     stack: ["Angular", "Firebase", "GCP", "TypeScript"],
   },
   {
     name: "Search Optimization with Algolia",
     kicker: "Performance and cost control",
-    problem: "The search integration created excessive request volume and avoidable operational cost.",
-    solution: "Refined Algolia usage patterns and request flow while preserving the user-facing experience.",
-    impact: "Cut monthly Algolia requests from around 10,000 to around 200.",
+    context: "The search integration generated excessive request volume and avoidable operational cost.",
+    improved: "Refined Algolia usage patterns and request flow while preserving the user-facing search experience.",
+    outcome: "Reduced monthly Algolia requests from around 10,000 to around 200.",
     stack: ["Algolia", "Angular", "Node.js", "Firebase"],
   },
   {
     name: "In-App Email Integration",
     kicker: "Communication inside the platform",
-    problem: "Users needed email capabilities without leaving their operational workflow.",
-    solution: "Connected external email hosts through SMTP, Gmail, Nodemailer, IMAP, and Gmail API integrations.",
-    impact: "Enabled richer in-app communication workflows across cloud-hosted services.",
+    context: "Users needed email capabilities without leaving their operational workflow.",
+    improved: "Connected external email hosts through SMTP, Gmail, Nodemailer, IMAP, and Gmail API integrations.",
+    outcome: "Supported richer in-app communication workflows across cloud-hosted services.",
     stack: ["Node.js", "Nodemailer", "IMAP", "Gmail API"],
   },
   {
     name: "AI-Assisted Invoice Processing",
     kicker: "OCR, automation, and validation workflows",
-    problem:
+    context:
       "Property-management teams need to process invoices faster while reducing manual validation mistakes.",
-    solution:
+    improved:
       "Created an invoice-processing feature that uses AI OCR to scan invoices, extract relevant fields, and support automated processing workflows. Integrated a Gemini-powered automation layer to compare OCR-extracted receiver data against validated system records.",
-    impact:
+    outcome:
       "Helps automate invoice review by measuring confidence between OCR data and stored receiver information, with logic to reject or flag invoices when the receiver is not validated in the system.",
     stack: ["Angular", "Firebase", "Cloud Functions", "Gemini", "OCR", "TypeScript"],
   },
   {
     name: "HR Onboarding Workflow Module",
     kicker: "Forward MENA team project",
-    problem: "HR teams needed configurable onboarding and offboarding flows with repeatable task templates.",
-    solution: "Built workflow settings, REST APIs, Prisma models, and PostgreSQL-backed task configuration.",
-    impact: "Supported structured HR operations with cleaner configuration and team-ready workflows.",
+    context: "HR teams needed configurable onboarding and offboarding flows with repeatable task templates.",
+    improved: "Built workflow settings, REST APIs, Prisma models, and PostgreSQL-backed task configuration.",
+    outcome: "Supported structured HR operations with cleaner configuration and team-ready workflows.",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Prisma"],
+  },
+];
+
+export const personalProjects: PersonalProject[] = [
+  {
+    name: "Cloud Task Processor",
+    type: "Backend / Cloud Lab",
+    date: "Spring + AWS lab",
+    summary:
+      "Built a cloud microservices lab with an API service that receives tasks and a worker service that processes them asynchronously.",
+    stack: [
+      "Spring Boot",
+      "AWS SQS",
+      "AWS S3",
+      "PostgreSQL",
+      "Docker",
+      "EC2",
+      "GitHub Actions",
+      "Nginx",
+    ],
+  },
+  {
+    name: "Anomaly Detection Sampling for IoT",
+    type: "Academic / Machine Learning",
+    date: "Jan 2022 - Mar 2022",
+    summary:
+      "Developed a cluster-based sampling approach for anomaly detection on NSL-KDD, designed for resource-conscious thin IoT nodes.",
+    stack: ["Machine Learning", "Data Analysis", "Python", "Pandas", "NumPy", "Scikit-learn", "K-means"],
+  },
+  {
+    name: "House of Movies",
+    type: "Full-stack Web App",
+    date: "Full-stack lab",
+    summary:
+      "Built an online movie reservation system with Angular admin/client portals and API compatibility across Django REST Framework and Spring Boot backends.",
+    stack: ["Angular", "Django REST Framework", "Spring Boot", "SQL Server", "MySQL"],
+  },
+  {
+    name: "Medical Center App",
+    type: "Android Application",
+    date: "Android lab",
+    summary:
+      "Created an Android app for EHR-related data and nurse pre-exam records, backed by a PHP REST API and MySQL database.",
+    stack: ["Android", "PHP REST API", "MySQL", "Java", "XML"],
+  },
+  {
+    name: "TaskMaster",
+    type: "Frontend / Productivity App",
+    date: "Frontend lab",
+    summary:
+      "Built a React, TypeScript, and Vite productivity app with task management, scheduling, routing, forms, UI components, and persistent storage.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "React Hook Form",
+      "Material UI",
+      "Tailwind CSS",
+    ],
   },
 ];
 

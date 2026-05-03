@@ -4,6 +4,7 @@ import { Certifications } from "@/components/sections/Certifications";
 import { Contact } from "@/components/sections/Contact";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { Hero } from "@/components/sections/Hero";
+import { PersonalProjects } from "@/components/sections/PersonalProjects";
 import { ProjectsCarousel } from "@/components/sections/ProjectsCarousel";
 import { Skills } from "@/components/sections/Skills";
 
@@ -25,6 +26,10 @@ export default function Home() {
       <ExperienceTimeline />
 
       <ProjectsCarousel />
+
+      <div className="border-y border-white/10 bg-white/[0.015]">
+        <PersonalProjects />
+      </div>
 
       <div className="border-y border-white/10 bg-white/[0.015]">
         <Certifications />

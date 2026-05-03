@@ -14,7 +14,11 @@ export function ProjectsCarousel() {
   };
 
   return (
-    <Section id="projects" eyebrow="Product work" title="Selected product work and technical case studies.">
+    <Section id="product-work" eyebrow="Product work" title="Product work & engineering wins.">
+      <p className="-mt-4 mb-8 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
+        These are selected examples of product features, workflow improvements,
+        and technical wins delivered across real web platforms.
+      </p>
       <div className="grid gap-5 lg:grid-cols-[0.7fr_0.3fr]">
         <Card className="overflow-hidden p-0">
           <div className="relative overflow-hidden border-b border-line bg-gradient-to-br from-accent/18 via-skysoft/10 to-white/[0.03] p-6 sm:p-8">
@@ -29,16 +33,16 @@ export function ProjectsCarousel() {
           <div className="p-6 sm:p-8">
             <div className="grid gap-4 lg:grid-cols-3">
               <div>
-                <p className="font-semibold text-slate-100">Problem</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{active.problem}</p>
+                <p className="font-semibold text-slate-100">Context</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">{active.context}</p>
               </div>
               <div>
-                <p className="font-semibold text-slate-100">Solution</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{active.solution}</p>
+                <p className="font-semibold text-slate-100">What I improved</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">{active.improved}</p>
               </div>
               <div className="rounded-md border border-accent/20 bg-accent/[0.06] p-4">
-                <p className="font-semibold text-accent">Impact</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{active.impact}</p>
+                <p className="font-semibold text-accent">Outcome</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">{active.outcome}</p>
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
