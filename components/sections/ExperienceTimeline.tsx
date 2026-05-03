@@ -97,7 +97,7 @@ function ExperienceCard({
 }
 
 export function ExperienceTimeline() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <section
@@ -122,7 +122,8 @@ export function ExperienceTimeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-accent/80 via-accent/35 to-transparent lg:left-1/2" />
+          <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-accent/80 via-accent/35 to-transparent lg:hidden" />
+          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-accent/90 via-accent/45 to-transparent shadow-[0_0_18px_rgba(79,209,197,.25)] lg:block" />
           <div className="space-y-10 lg:space-y-0">
             {experiences.map((item, index) => (
               <ExperienceCard
