@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { heroActions, highlights } from "@/data/portfolio";
+import { highlights } from "@/data/portfolio";
 import { ButtonLink } from "@/components/ui";
 
 export function Hero() {
@@ -29,20 +29,6 @@ export function Hero() {
             View Projects
           </ButtonLink>
           <ButtonLink href="#contact">Contact Me</ButtonLink>
-        </div>
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold text-slate-300">
-          {heroActions.map((action) => (
-            <a
-              key={action.label}
-              href={action.href}
-              target={action.newTab ? "_blank" : undefined}
-              rel={action.newTab ? "noreferrer" : undefined}
-              className="inline-flex items-center gap-2 transition hover:text-accent"
-            >
-              {action.label}
-              <span aria-hidden="true">-&gt;</span>
-            </a>
-          ))}
         </div>
       </div>
 

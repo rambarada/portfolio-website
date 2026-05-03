@@ -56,11 +56,6 @@ export const contactLinks: LinkItem[] = [
   { label: "LinkedIn", value: "linkedin.com/in/ram-barada", href: "https://linkedin.com/in/ram-barada" },
 ];
 
-export const heroActions: LinkItem[] = [
-  { label: "GitHub profile", href: "https://github.com/rambarada" },
-  { label: "LinkedIn profile", href: "https://linkedin.com/in/ram-barada" },
-];
-
 export const headerCta: LinkItem = {
   label: "Preview CV",
   href: "/documents/ram-barada-cv.pdf",
