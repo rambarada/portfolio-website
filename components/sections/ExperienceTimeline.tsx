@@ -38,17 +38,13 @@ function ExperienceCard({
 }) {
   const isLeft = index % 2 === 0;
   const placement = isLeft ? "lg:justify-self-end lg:pr-16" : "lg:col-start-2 lg:pl-16";
-  const dotPlacement = isLeft ? "lg:right-[-0.55rem]" : "lg:left-[-0.55rem]";
 
   return (
     <article className={`relative lg:grid lg:grid-cols-2 ${index > 0 ? "mt-10 lg:mt-12" : ""}`}>
+      <div className="absolute left-2 top-8 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)] lg:left-1/2" />
       <div
         className={`group relative ml-9 w-full max-w-[420px] rounded-lg border border-white/10 bg-[#070a10]/90 p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,.28)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:p-7 lg:ml-0 ${placement}`}
       >
-        <div
-          className={`absolute -left-[2.45rem] top-8 z-10 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)] lg:left-auto ${dotPlacement}`}
-        />
-
         <div className="flex items-center gap-2 text-sm font-semibold text-accent">
           <BriefcaseIcon />
           <span>{item.period}</span>
