@@ -36,8 +36,7 @@ export function PersonalProjects() {
                 </span>
               </div>
               <span className="rounded-full border border-white/10 bg-ink/35 px-3 py-1 text-xs text-slate-400">
-                {String(activeIndex + 1).padStart(2, "0")} /{" "}
-                {String(personalProjects.length).padStart(2, "0")}
+                {activeIndex + 1} / {personalProjects.length}
               </span>
             </div>
 

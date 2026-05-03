@@ -23,7 +23,7 @@ export function ProjectsCarousel() {
         <Card className="overflow-hidden p-0">
           <div className="relative overflow-hidden border-b border-line bg-gradient-to-br from-accent/18 via-skysoft/10 to-white/[0.03] p-6 sm:p-8">
             <div className="absolute right-6 top-6 rounded-full border border-white/10 bg-ink/40 px-3 py-1 text-xs text-slate-300">
-              0{activeIndex + 1} / 0{projects.length}
+              {activeIndex + 1} / {projects.length}
             </div>
             <p className="text-sm font-medium text-accent">{active.kicker}</p>
             <h3 className="mt-5 max-w-2xl text-3xl font-semibold tracking-tight text-white">
@@ -81,7 +81,7 @@ export function ProjectsCarousel() {
                   : "border-line bg-white/[0.03] text-slate-300 hover:-translate-y-0.5 hover:border-accent/50"
               }`}
             >
-              <p className="text-xs font-medium text-accent">0{index + 1}</p>
+              <p className="text-xs font-medium text-accent">{index + 1}</p>
               <p className="mt-2 text-sm font-semibold">{project.name}</p>
               <p className="mt-1 text-xs text-slate-400">{project.kicker}</p>
             </button>
