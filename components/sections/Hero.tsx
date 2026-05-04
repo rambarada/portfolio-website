@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto grid min-h-[calc(100svh-73px)] scroll-mt-24 max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:gap-12 xl:grid-cols-[minmax(0,0.95fr)_minmax(380px,0.82fr)] xl:gap-16"
+      className="mx-auto grid min-h-[calc(100svh-73px)] scroll-mt-24 max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[660px] lg:gap-12 xl:grid-cols-[minmax(0,0.95fr)_minmax(380px,0.82fr)] xl:gap-16"
     >
       <div className="animate-rise max-w-3xl mt-4 sm:mt-0">
         <div className="mb-5 inline-flex max-w-full items-start gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent sm:items-center">
