@@ -57,7 +57,7 @@ function ExperienceCard({
           <BriefcaseIcon />
           <span>{item.period}</span>
         </div>
-        <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">{item.company}</h3>
+        <h3 className="mt-4 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">{item.company}</h3>
         <p className="mt-1 text-sm font-medium text-subdued">{item.role}</p>
         <p className="mt-5 text-sm leading-6 text-subdued">{item.summary}</p>
 
@@ -113,10 +113,10 @@ export function ExperienceTimeline() {
 
       <div className="relative mx-auto max-w-6xl scroll-mt-24">
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-accent">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent sm:text-sm sm:tracking-[0.24em]">
             Experience
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Experience shaped by real product delivery.
           </h2>
           <p className="mt-4 text-base leading-7 text-subdued">

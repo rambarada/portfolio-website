@@ -9,17 +9,17 @@ export function Hero() {
       className="mx-auto grid min-h-[calc(100svh-73px)] scroll-mt-24 max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[660px] lg:gap-12 xl:grid-cols-[minmax(0,0.95fr)_minmax(380px,0.82fr)] xl:gap-16"
     >
       <div className="animate-rise max-w-3xl mt-4 sm:mt-0">
-        <div className="mb-5 inline-flex max-w-full items-start gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent sm:items-center">
+        <div className="mb-5 inline-flex max-w-full items-start gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-xs font-medium text-accent sm:items-center sm:text-sm">
           <span className="h-2 w-2 shrink-0 rounded-full bg-accent shadow-[0_0_18px_rgba(79,209,197,.85)]" />
           <span>Currently building cloud workflows for property-management teams</span>
         </div>
-        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-accent">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-accent sm:text-sm sm:tracking-[0.28em]">
           Lead Full-Stack Developer
         </p>
-        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-3xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           Cloud-based web applications with product sense and engineering depth.
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+        <p className="mt-6 max-w-2xl text-sm leading-6 text-muted sm:text-lg sm:leading-8">
           I am Ram Barada, a full-stack developer working across Angular,
           TypeScript, Node.js, Firebase, GCP, AWS, and Spring Boot. At Nahaus.de,
           I lead product-focused engineering for property-management workflows.
@@ -50,7 +50,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-accent">Portfolio dashboard</p>
-                  <h2 className="mt-1 text-2xl font-semibold text-foreground">Ram Barada</h2>
+                  <h2 className="mt-1 text-xl font-semibold text-foreground sm:text-2xl">Ram Barada</h2>
                   <p className="mt-1 text-sm text-subdued">Lead Full-Stack Developer @ Nahaus.de</p>
                 </div>
               </div>

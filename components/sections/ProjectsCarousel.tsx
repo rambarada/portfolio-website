@@ -46,7 +46,7 @@ export function ProjectsCarousel() {
               </div>
             </div>
             <p className="text-sm font-medium text-accent">{active.kicker}</p>
-            <h3 className="mt-5 max-w-2xl text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            <h3 className="mt-5 max-w-2xl text-xl font-semibold tracking-tight text-foreground sm:text-3xl">
               {active.name}
             </h3>
           </div>

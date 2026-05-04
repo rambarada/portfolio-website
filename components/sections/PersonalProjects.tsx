@@ -40,7 +40,7 @@ export function PersonalProjects() {
               </span>
             </div>
 
-            <h3 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
+            <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
               {active.name}
             </h3>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-muted">

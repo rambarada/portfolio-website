@@ -91,10 +91,10 @@ export function Contact() {
       <div className="rounded-lg border border-accent/20 bg-gradient-to-br from-accent/[0.12] via-panel/90 to-skysoft/[0.08] p-5 shadow-[0_30px_120px_rgba(0,0,0,.18)] backdrop-blur sm:p-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-accent">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent sm:text-sm sm:tracking-[0.24em]">
               Contact
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Need a web product built with ownership?
             </h2>
             <p className="mt-4 max-w-2xl leading-7 text-muted">
