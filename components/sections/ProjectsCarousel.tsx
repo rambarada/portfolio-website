@@ -22,8 +22,28 @@ export function ProjectsCarousel() {
       <div className="grid gap-5 lg:grid-cols-[0.7fr_0.3fr]">
         <Card className="overflow-hidden p-0">
           <div className="relative overflow-hidden border-b border-line bg-gradient-to-br from-accent/18 via-skysoft/10 to-panel/40 p-5 sm:p-8">
-            <div className="mb-5 w-fit rounded-full border border-line bg-ink/30 px-3 py-1 text-xs text-muted sm:absolute sm:right-6 sm:top-6 sm:mb-0">
-              {activeIndex + 1} / {projects.length}
+            <div className="mb-5 flex items-center justify-between gap-3 sm:block">
+              <div className="w-fit rounded-full border border-line bg-ink/30 px-3 py-1 text-xs text-muted sm:absolute sm:right-6 sm:top-6">
+                {activeIndex + 1} / {projects.length}
+              </div>
+              <div className="flex shrink-0 items-center gap-2 sm:hidden">
+                <button
+                  type="button"
+                  onClick={() => move(-1)}
+                  aria-label="Show previous product work"
+                  className="rounded-md border border-line bg-panel/70 px-3 py-2 text-xs font-semibold text-foreground transition hover:border-accent hover:text-accent"
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  onClick={() => move(1)}
+                  aria-label="Show next product work"
+                  className="rounded-md bg-accent px-3 py-2 text-xs font-semibold text-ink transition hover:bg-skysoft"
+                >
+                  Next
+                </button>
+              </div>
             </div>
             <p className="text-sm font-medium text-accent">{active.kicker}</p>
             <h3 className="mt-5 max-w-2xl text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
@@ -50,7 +70,7 @@ export function ProjectsCarousel() {
                 <Tag key={tech}>{tech}</Tag>
               ))}
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-6 hidden flex-wrap items-center gap-3 sm:flex">
               <button
                 type="button"
                 onClick={() => move(-1)}
@@ -69,7 +89,7 @@ export function ProjectsCarousel() {
           </div>
         </Card>
 
-        <div className="grid gap-3">
+        <div className="hidden gap-3 lg:grid">
           {projects.map((project, index) => (
             <button
               key={project.name}
