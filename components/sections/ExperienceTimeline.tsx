@@ -43,7 +43,7 @@ function ExperienceCard({
 
   return (
     <article
-      className={`relative grid grid-cols-[1rem_minmax(0,1fr)] gap-x-6 lg:grid-cols-[minmax(0,1fr)_96px_minmax(0,1fr)] lg:gap-x-0 ${
+      className={`relative grid grid-cols-[1rem_minmax(0,1fr)] gap-x-4 sm:gap-x-6 lg:grid-cols-[minmax(0,1fr)_96px_minmax(0,1fr)] lg:gap-x-0 ${
         index > 0 ? "mt-10 lg:mt-14" : ""
       }`}
     >
@@ -51,15 +51,15 @@ function ExperienceCard({
         <div className="mt-8 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_0_4px_rgba(79,209,197,.08),0_0_22px_rgba(79,209,197,.9)]" />
       </div>
       <div
-        className={`group col-start-2 row-start-1 w-full max-w-[420px] rounded-lg border border-white/10 bg-[#070a10]/90 p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,.28)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:p-7 lg:ml-0 ${placement}`}
+        className={`group col-start-2 row-start-1 w-full rounded-lg border border-line bg-panel/90 p-5 text-left shadow-[0_24px_80px_rgba(0,0,0,.16)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_24px_90px_rgba(79,209,197,.09)] sm:max-w-[420px] sm:p-7 lg:ml-0 ${placement}`}
       >
         <div className="flex items-center gap-2 text-sm font-semibold text-accent">
           <BriefcaseIcon />
           <span>{item.period}</span>
         </div>
-        <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">{item.company}</h3>
-        <p className="mt-1 text-sm font-medium text-slate-500">{item.role}</p>
-        <p className="mt-5 text-sm leading-6 text-slate-400">{item.summary}</p>
+        <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground">{item.company}</h3>
+        <p className="mt-1 text-sm font-medium text-subdued">{item.role}</p>
+        <p className="mt-5 text-sm leading-6 text-subdued">{item.summary}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {item.stack.slice(0, 5).map((tech) => (
@@ -73,9 +73,9 @@ function ExperienceCard({
           }`}
         >
           <div className="overflow-hidden">
-            <div className="rounded-md border border-white/10 bg-white/[0.025] p-4">
-              <p className="mb-3 text-sm font-semibold text-white">Key achievements</p>
-              <ul className="space-y-3 text-sm leading-6 text-slate-300">
+            <div className="rounded-md border border-line bg-ink/25 p-4">
+              <p className="mb-3 text-sm font-semibold text-foreground">Key achievements</p>
+              <ul className="space-y-3 text-sm leading-6 text-muted">
                 {item.achievements.map((achievement) => (
                   <li key={achievement} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -91,7 +91,7 @@ function ExperienceCard({
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className="mt-5 rounded-md border border-white/15 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+          className="mt-5 rounded-md border border-line px-4 py-2 text-sm font-semibold text-foreground transition duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
         >
           {expanded ? "Hide details" : "Show details"}
         </button>
@@ -106,9 +106,9 @@ export function ExperienceTimeline() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden border-y border-white/10 bg-ink px-6 py-16 sm:py-20"
+      className="relative overflow-hidden border-y border-line bg-ink px-4 py-14 sm:px-6 sm:py-20"
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(255,255,255,.8)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.8)_1px,transparent_1px)] [background-size:60px_60px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.045] [background-image:linear-gradient(rgba(79,209,197,.8)_1px,transparent_1px),linear-gradient(90deg,rgba(79,209,197,.8)_1px,transparent_1px)] [background-size:60px_60px]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-accent/[0.06] to-transparent" />
 
       <div className="relative mx-auto max-w-6xl scroll-mt-24">
@@ -116,10 +116,10 @@ export function ExperienceTimeline() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-accent">
             Experience
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Experience shaped by real product delivery.
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-400">
+          <p className="mt-4 text-base leading-7 text-subdued">
             A timeline of full-stack work across web platforms, cloud integrations,
             and workflow automation.
           </p>

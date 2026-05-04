@@ -80,9 +80,8 @@ export const contactLinks: LinkItem[] = [
 ];
 
 export const headerCta: LinkItem = {
-  label: "Preview CV",
+  label: "Download CV",
   href: "/documents/ram-barada-cv.pdf",
-  newTab: true,
 };
 
 export const highlights: Highlight[] = [

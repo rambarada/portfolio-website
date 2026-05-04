@@ -15,8 +15,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeScript = `
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var theme = stored === 'light' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      } catch (_) {
+        document.documentElement.dataset.theme = 'dark';
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  `;
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" className="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

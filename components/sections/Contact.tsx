@@ -87,17 +87,17 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-16 sm:py-20">
-      <div className="rounded-lg border border-accent/20 bg-gradient-to-br from-accent/[0.12] via-panel/90 to-skysoft/[0.08] p-6 shadow-[0_30px_120px_rgba(0,0,0,.28)] backdrop-blur sm:p-8">
+    <section id="contact" className="mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-14 sm:px-6 sm:py-20">
+      <div className="rounded-lg border border-accent/20 bg-gradient-to-br from-accent/[0.12] via-panel/90 to-skysoft/[0.08] p-5 shadow-[0_30px_120px_rgba(0,0,0,.18)] backdrop-blur sm:p-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-accent">
               Contact
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Need a web product built with ownership?
             </h2>
-            <p className="mt-4 max-w-2xl leading-7 text-slate-300">
+            <p className="mt-4 max-w-2xl leading-7 text-muted">
               I help turn complex workflows into polished, scalable web experiences,
               from product thinking and architecture to implementation, integrations,
               deployment, and long-term maintainability.
@@ -105,7 +105,7 @@ export function Contact() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={mailHref}
-                className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent"
+                className="inline-flex items-center justify-center rounded-md bg-foreground px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-accent"
               >
                 Send Email
               </a>
@@ -117,22 +117,22 @@ export function Contact() {
                 return (
                   <div
                     key={link.label}
-                    className="group flex items-center gap-3 rounded-md border border-white/10 bg-ink/35 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 hover:bg-ink/55 hover:shadow-[0_16px_45px_rgba(79,209,197,.08)]"
+                    className="group flex items-center gap-3 rounded-md border border-line bg-ink/35 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 hover:bg-ink/55 hover:shadow-[0_16px_45px_rgba(79,209,197,.08)]"
                   >
                     <a href={mailHref} className="flex min-w-0 flex-1 items-center gap-3">
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-accent/25 bg-accent/10 text-accent transition group-hover:border-accent/50 group-hover:bg-accent/15">
                         <ContactIcon label={link.label} />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-sm text-slate-400">{link.label}</span>
-                        <span className="block break-all text-sm font-semibold text-white">{link.value}</span>
+                        <span className="block text-sm text-subdued">{link.label}</span>
+                        <span className="block break-all text-sm font-semibold text-foreground">{link.value}</span>
                       </span>
                     </a>
                     <button
                       type="button"
                       onClick={copyEmail}
                       aria-label={copied ? "Email address copied" : "Copy email address"}
-                      className="inline-flex h-10 min-w-10 shrink-0 items-center justify-center rounded-md border border-white/10 px-2 text-slate-300 transition hover:border-accent hover:text-accent"
+                      className="inline-flex h-10 min-w-10 shrink-0 items-center justify-center rounded-md border border-line px-2 text-muted transition hover:border-accent hover:text-accent"
                     >
                       {copied ? <span className="text-xs font-semibold">Copied</span> : <CopyIcon />}
                     </button>
@@ -146,16 +146,16 @@ export function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center gap-3 rounded-md border border-white/10 bg-ink/35 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 hover:bg-ink/55 hover:shadow-[0_16px_45px_rgba(79,209,197,.08)]"
+                  className="group flex items-center gap-3 rounded-md border border-line bg-ink/35 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-accent/70 hover:bg-ink/55 hover:shadow-[0_16px_45px_rgba(79,209,197,.08)]"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-accent/25 bg-accent/10 text-accent transition group-hover:border-accent/50 group-hover:bg-accent/15">
                     <ContactIcon label={link.label} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-sm text-slate-400">{link.label}</span>
-                    <span className="block break-all text-sm font-semibold text-white">{link.value}</span>
+                    <span className="block text-sm text-subdued">{link.label}</span>
+                    <span className="block break-all text-sm font-semibold text-foreground">{link.value}</span>
                   </span>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/10 text-slate-300 transition group-hover:border-accent group-hover:text-accent">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-line text-muted transition group-hover:border-accent group-hover:text-accent">
                     <ExternalLinkIcon />
                   </span>
                 </a>

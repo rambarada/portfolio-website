@@ -31,8 +31,8 @@ export function Skills() {
             <div className="flex h-full flex-col p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white">{group.title}</h3>
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-300">
+                  <h3 className="text-xl font-semibold text-foreground">{group.title}</h3>
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
                     {group.description}
                   </p>
                 </div>
@@ -61,7 +61,7 @@ export function Skills() {
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                     Applied to
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-300 md:text-[13px]">
+                  <p className="mt-2 text-sm leading-6 text-muted md:text-[13px]">
                     {group.proof}
                   </p>
                 </div>

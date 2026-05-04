@@ -3,7 +3,25 @@
 @tailwind utilities;
 
 :root {
+  --color-ink: #080b12;
+  --color-panel: #0f1624;
+  --color-line: #223048;
+  --color-foreground: #f8fbff;
+  --color-muted: #cbd5e1;
+  --color-subdued: #94a3b8;
+  --color-wash: rgba(255, 255, 255, 0.015);
   color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --color-ink: #f5f9fb;
+  --color-panel: #ffffff;
+  --color-line: #cbdde6;
+  --color-foreground: #10202c;
+  --color-muted: #425466;
+  --color-subdued: #64748b;
+  --color-wash: rgba(13, 70, 84, 0.045);
+  color-scheme: light;
 }
 
 * {
@@ -12,12 +30,15 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-ink);
 }
 
 body {
   margin: 0;
-  background: #080b12;
-  color: #e5edf7;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--color-ink);
+  color: var(--color-muted);
 }
 
 ::selection {
