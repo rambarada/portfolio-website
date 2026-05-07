@@ -40,7 +40,7 @@ export function Hero() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-accent/40 bg-ink shadow-[0_0_35px_rgba(79,209,197,.18)] sm:h-24 sm:w-24">
                   <Image
-                    src="/profile.jpg"
+                    src="/profile.jpeg"
                     alt="Ram Barada"
                     fill
                     sizes="96px"
