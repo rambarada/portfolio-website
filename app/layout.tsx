@@ -5,9 +5,36 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ram-barada.vercel.app"),
+
   title: "Ram Barada | Full-Stack Developer",
   description:
     "Portfolio of Ram Barada, a Lead Full-Stack Developer specializing in Angular, TypeScript, Node.js, Firebase, GCP, AWS, Spring Boot, and cloud-based web applications.",
+
+  openGraph: {
+    title: "Ram Barada | Full-Stack Developer",
+    description:
+      "Lead Full-Stack Developer building cloud-based web applications with product sense and engineering depth.",
+    url: "https://ram-barada.vercel.app",
+    siteName: "Ram Barada Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ram Barada Full-Stack Developer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ram Barada | Full-Stack Developer",
+    description:
+      "Lead Full-Stack Developer building cloud-based web applications with product sense and engineering depth.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
